@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html>
+<script src="filter.js"></script>
+<link rel="stylesheet" type="text/css" href="new.css">
+
+    <style>
+*{padding:0px;
+margin:0px;     
+        }
+		html {
+  scroll-behavior: smooth;
+}
+
+      
+        #search:hover{
+        background-color:brown;
+        color:white;
+        cursor: pointer;
+        }
+        #demo ul {
+            list-style: none;
+            padding:0px;
+            
+            
+        }
+        #demo ul li {
+            list-style: none;
+            padding:20px;
+            border-bottom: 2px solid none;
+	border-radius:42px;
+	background-color:#E3DFDF;
+	margin-top:2px;
+	margin-left:34%;
+	width:542px;	
+        }
+        #demo ul li:hover{
+            color:white;
+            background-color: #00789A; 
+              }
+    a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+    a:visited {
+    color: darkcyan;
+    background-color: transparent;
+    text-decoration: none;
+}
+.autocomplete {
+  /*the container must be positioned relative:*/
+  position: relative;
+  display: inline-block;
+    
+}
+.autocomplete-items {
+  position: absolute;
+	width:90%;
+  border-bottom: none;
+  border-top: none;
+margin-top:-45%;
+    
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color:cornflowerblue;
+  border-bottom: 1px solid #fff; 
+}
+
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: #e9e9e9; 
+    
+}
+
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}	
+
+/* Style inputs */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+.team {margin-left:3%;}
+.closebtn {
+    padding-left: 10px;
+    color: #000000;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    cursor: pointer;
+	margin-right:28%;
+	margin-top:-3%;
+}
+
+.closebtn:hover {
+    color: brown;
+}
+/* Style the buttons */
+.btn1 {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .btn1:hover {
+    background-color: #666;
+    color: white;
+}
+#myDIV0.5{
+background-color:orange;
+
+}
+
+#cls_bsd{border: none;
+    outline: none;
+    padding: 10px 20px;
+    background-color: darkcyan;
+    cursor: none;
+    font-size: 18px;
+	color:white;}
+  </style>
+<body  >
+<div  id="background"  >
+<h1 style="text-align: center; background-color: darkcyan; padding:15px;color:white; font-size:3vw;">SMS BLOOD GROUP</h1>
+<p style="text-align: center; font-size: 20px; color:chocolate;font-size:1.5vw;"> search your Blood Group</p>
+<span id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+   <a href="../blood group.html">Home</a>
+  <a href="#" onclick="document.getElementById('id01').style.display='block'">About</a>
+   <a href="#" onclick="document.getElementById('id02').style.display='block'">Contact</a>
+  <a href="#" onclick="document.getElementById('id03').style.display='block'">Developer</a>
+
+</span>
+
+<span style="font-size:30px;cursor:pointer; margin-left:10px;" onclick="openNav()">&#9776;</span>
+
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="https://www.w3schools.com/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none';" class="close" title="Close Modal">&times;</span>
+      <img src="pictures/00004.png" alt="Asas Logo" class="avatar">
+	  <p><b>IT Wing</b> Asas-2020</p>
+    </div>
+
+    <div class="container" style="text-align:center">
+      <h2 style="margin-left:3%;"><b>OUR TEAM</b></H2><br>
+<p class="team"><b>Chariman:</b></p>
+<p class="team">Abid Hussain</p><br>
+<p class="team"><b>Convenors:</b></p>
+<p class="team">Ajnas PT</p>
+<p class="team">Javad Amminikkad</p>
+<br>
+
+<p class="team"><b>Members:</b> </p>
+<p class="team">Adnan</p>
+<p class="team">Saqfi</p>
+<p class="team">Baheej</p>
+<p class="team">Muzammil PM</p>
+<p class="team">Ajnan</p>
+<p class="team">Sayyid Swafvan</p>
+<p class="team">Hadi Hassan</p>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Back</button>
+    </div>
+  </form>
+</div>
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="https://www.w3schools.com/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id02').style.display='none';" class="close" title="Close Modal">&times;</span>
+     
+    </div>
+
+    <div class="container" style="text-align:center">
+      <h3 style="margin-left:3%; font-family:ArtlookinOneType;color:white;padding:5px; background-color:#042D6B; margin-left:36%;margin-right:36%;"><b>Concact IT Wing</b></h3><br>
+
+<div class="container">
+  <form action="https://www.w3schools.com/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="Batch">Class</label>
+    <select id="country" name="country">
+      <option value="10">10</option>
+      <option value="U10">U10</option>
+      <option value="09">09</option>
+      <option value="U9">U9</option>
+      <option value="08">08</option>
+      <option value="U8">U8</option>
+      <option value="07">07</option>
+      <option value="U7">U7</option>
+      <option value="06">06</option>
+      <option value="U6">U6</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Back</button>
+    </div>
+  </form>
+</div>
+<div id="id03" class="modal">
+  
+  <form class="modal-content animate" action="https://www.w3schools.com/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id03').style.display='none';" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container" style="text-align:center">
+      <h3 style="margin-left:3%;"><u>Developer</u></H3><br>
+	  <p><b>Version:&nbsp;&nbsp;</b>1.0</p>
+      <p><b>Last Updated On:&nbsp;&nbsp;</b>01/03/2020</p>
+      <p><b>Coordinator:&nbsp;&nbsp;</b>Asas IT Wing 2020</p>
+      <p><b>Developer:&nbsp;&nbsp;</b><a href="mailto:ajnaspttrl@gmail.com" style="text-decoration:none;color:red;font-weight:bold;" title="E-mail: ajnaspttrl@gmail.com" >Ajnas PT Ayanikkad</a></p>
+
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Back</button>
+    </div>
+  </form>
+</div>
+<form autocomplete="off" >
+  <div class="autocomplete" style="width:40%; margin-left:33%;">
+<input id="myInput" type="text" style="width:90%; height:80%;margin-top:2%;margin-bottom:45%;padding:4%;" placeholder="pls enter your ad:no or blood group or name..." >
+ </div>
+    </form>
+<button id="search" onclick="myFunction()" style="background-color: orange; padding: 2.5%; color:white; border: none;float:left; margin-left:73%; margin-top:-23.2%;">Search</button><br>
+
+<span >
+	
+  <span id="demo"style="background-color:#05B5C5;margin:6px; color:black; width:542px;height:auto;margin-left:33%;text-align:center; font-weight: bolder;">
+	
+</span>
+
+</span>
+
+<button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+<br>
+<br>
+<br>
+<br>
+
+<div id="myDIV0">
+
+<div id="myDIV1">
+<button id="cls_bsd">Class Based Search:</button>
+  <button class="btn1" onclick="allFunction()">All</button>
+  <button class="btn1 active "onclick="tenFunction()">10</button>
+  <button class="btn1"onclick="nineFunction()">09</button>
+  <button class="btn1"onclick="eightFunction()">08</button>
+  <button class="btn1"onclick="sevenFunction()">07</button>
+  <button class="btn1"onclick="sixFunction()">06</button>
+  <button class="btn1"onclick="utenFunction()">U10</button>
+  <button class="btn1"onclick="unineFunction()">U09</button>
+  <button class="btn1"onclick="ueightFunction()">U08</button>
+  <button class="btn1"onclick="usevenFunction()">U07</button>
+  <button class="btn1"onclick="usixFunction()">U06</button>
+</div>
+</div>
+</div>
+
+
+  </div>
+</div>
+<div id="copyright">
+
+<br>
+<span style="color:white; margin-left:40%;"><b><span style="color:black;">&nbsp; &copy; Copy Right:</span></b> IT Wing & Health WIng</span>
+<br>
+<span style="color:white; margin-left:47%;"><b> ASAs 2019-20</span>
+
+
+
+</div>
+
+<script>
+//selecting one class among all
+function allFunction() {
+    location.replace("../blood group.html")
+}
+/*function tenFunction() {
+    location.replace("class based only/10.html")
+}*/
+function nineFunction() {
+    location.replace("09.html")
+}
+function eightFunction() {
+    location.replace("08.html")
+}
+function sevenFunction() {
+    location.replace("07.html")
+}
+function sixFunction() {
+    location.replace("06.html")
+}
+function utenFunction() {
+    location.replace("U10.html")
+}
+function unineFunction() {
+    location.replace("U09.html")
+}
+function ueightFunction() {
+    location.replace("U08.html")
+}
+function usevenFunction() {
+    location.replace("U07.html")
+}
+function usixFunction() {
+    location.replace("U06.html")
+}
+    //auto complete part
+    function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var countries = ["2374","2393","2421","2385","2389","2384","2397","2382","2395","2440","2412","2416","2430","2383","2419","2437","2390","2392","2406","2438","2417","2381","2422","H191","2399","1973","H168","H187","2418","H182","2431","2414","2373","2435","2404","H170","2386","2403","H195","2398","3302","2375","2413","2427","2387","2029","2391","2410","2396","2442","2400","3301","H184","2408","2372","2388","2378","2405","2025","H193","2441","H171","MUHAMMED SHAMIL CH","MOHMAMMED ANAS V","SABEEHE MUSHARRAFE","MOHAMMED JASEEM PP ","NASEEM P","ABDULLA","SHABEER T","SHAHIN ALI TC","SUHAIL K","MUHAMMED JABIR P","MUHAMMED SHAFI T","MUHAMMED MUBASHIR KP","MUHYUDHEEN SHAKIR P","MUHAMMED MUHSIN M","MOHAMMED ANAS P","MOHAMMED NIYAZ M","MUHAMMAD MUNAVAR V","MUHAMMED SHAMEEM","MUHAMMED MUKHTHAR PV","MUHAMMED ANAS V","MUHAMMED RASHID K","MOHAMMED SHEBEEB P","SALU SHIYAF M","MUHAMMED FAYIZ N","MUHAMMED AJMAL ZAHRY","MUJEEBU RAHMAN","MUHAMMED SHAMMAS E","HABEEB RAHMAN TT","MOHAMMED SALIM","MUHAMMED MUZAMMIL PT","HAMRAZ AHAMED","MOHAMED DILSHAD","UNAIS VA","MUHAMMAD SAFVAN A ","MUHAMMAD SHAFEEHU","SABEEH K","ABOOBAKAR SIDDEEQUE K","JAMSHEERALI NC ","ABID HUSSAIN KA","ASWIM SAEED A","MUHAMMED NOUFAL S","MUHANNAD KT","MOHAMMED SHAMEEL M","UNAIS P","MUHAMMED NAHEEM ASHHAL","ABDUL NAFIH VP","MUHAMMED ASSAF ALI","MURSHID RAHMAN","MUHAMMED IRSHAD KT","MUHAMMED THANSEEM V","ABDUL BAKHIR PT","NAFEESUDEEN S","MOHAMMED USMAN","MOHAMMED AJMAL C","MUHAMMED MIDHLAJ KP","SAMVIL","MOHAMMED ALI RABEAH NT","HAMZATH SAFVAN P","MUBARIS ARIF V","SAEED ALI","MUHAMMED UVAIS ","MUHAMMED NIYAS P","A+ve","A-ve","AB+ve","AB-ve","B+ve","B-ve","O+ve","O-ve"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
+    // Get the input field
+var input = document.getElementById("myInput");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("search").click();
+  }
+}); 
+function myFunction() {
+  var gr;
+  var blood = document.getElementById("myInput").value;
+
+  switch(blood) {
+          //A+ve part
+    case "A+ve":
+  text = ['<ul><a href="../students/2057.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2057.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHAFI PP</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2435.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2435.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SAFVAN A</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2421.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2421.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SABEEHE MUSHARRAFE</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2404.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2404.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAFEEHU</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2399.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2399.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED AJMAL ZAHRY</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2391.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2391.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED ASAF ALI</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/H191.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H191.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED FAYIS</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2025.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2025.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUBARIS ARIF</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2387.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2387.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NAHEEM ASHHAL</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2013.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2013.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDULLA BA</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2413.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2413.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMMEL M</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2405.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2405.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>HAMZATH SAFVAN P</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2403.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2403.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>JAMSHEER ALI</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2388.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2388.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHAHI ALI TC</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2386.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2386.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABOOBAKAR SIDDEEQUE</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2384.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2384.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDULLA</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2374.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2374.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMIL CH</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br></ul>'];
+
+    break;
+    // AB+ve part
+    case "AB+ve":
+    text = ['<ul><a href="../students/H182.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H182.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUZAMMIL</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2427.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2427.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>UNAIS P</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><br></ul>'];
+    break;
+case "AB-ve":
+	text = ['<ul><a href="../students/2991.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2991.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>Sadhique</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+	break; 
+
+    case "A-ve":
+    text = ['<ul><a href="../students/2396.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2396.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED IRSHAD KT</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/H193.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/H193.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SAEEDALI M</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br></ul>'];
+    break; 
+    // B+ve part
+    case "B+ve":
+    text = ['<ul><a href="../students/2044.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2044.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED </li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2395.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2395.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SUHAIL K</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2431.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2431.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>HAMRAZ AHMED</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2389.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2389.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>NASEEEM P</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2410.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2410.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MURSHID RAHMAN</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/H171.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H171.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMEED NIYAS P</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2397.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2397.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHABEER</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> </ul><br><ul><a href="../students/2400.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2400.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDUL BAKIR PT</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/1973.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/1973.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUJEEBU RAHMAN</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/H184.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H184.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED USMAN</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> </ul><br><ul><a href="../students/2438.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2438.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED ANAS V</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/3302.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/3302.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NOUFAL</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2372.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2372.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MIDLAJ KP</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2408.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2408.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED AJMAL C</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2442.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2442.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED THANSEEM</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2381.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2381.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHABEEB</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2417.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2417.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED  RASHID K</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2375.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2375.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHANNAD</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2388.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2388.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHAMVEEL PP</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2412.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2412.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAFI T</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2392.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2392.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMEEM P</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2419.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2419.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED ANAS P</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2373.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2373.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>UNAIS VA</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> </ul><br><ul><a href="../students/2393.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2393.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED ANAS</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul><br></ul>'];
+    break;
+ // B-ve part
+    case "B-ve":
+    text = ['<ul><a href="../students/2385.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2385.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED JASEEM K</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+    // O+ve part
+    case "O+ve":
+    text = ['<ul><a href="../students/2441.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2441.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED UVAIS</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2406.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2406.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUKHTHAR PV</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2383.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2383.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUHSIN</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/3301.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/3301.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>NAFEESUDHEEN</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2029.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2029.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDU NAFIH VP</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2430.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2430.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHUDHEEN SHAKIR</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2378.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2378.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED ALI RABEEH</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2018.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2018.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDU RAHMAN</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/H187.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H187.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>HABEEB RAHMAN</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2422.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2422.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SALU SHIYAF</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/H168.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H168.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMMAS E</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2437.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2437.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NIYAS M</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2416.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2416.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUBASHIR KP</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/H195.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H195.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABID HUSAIN</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2440.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2440.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED JABIR P</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2414.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2414.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED DILSHAD</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br></ul>'];
+    break;
+// O-ve part
+    case "O-ve":
+    text = ['<ul><a href="../students/H170.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H170.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SABEEH K</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br><ul><a href="../students/2390.html"><span style="width:42px; height:60px; border-radius:50%;"><img src="../pictures/2390.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUNAVAR V</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span></ul> <br></ul>'];
+    break;
+   
+//10 th class adno based
+ case "2374":
+    text = ['<ul><a href="../students/2374.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2374.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMIL CH(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+ case "2384":
+    text = ['<ul><a href="../students/2384.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2384.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDULLA(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+ case "2386":
+    text = ['<ul><a href="../students/2386.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2386.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABOOBAKAR SIDDEEQUE(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+ case "2388":
+    text = ['<ul><a href="../students/2388.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2388.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHAHIN ALI TC(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2403":
+    text = ['<ul><a href="../students/2403.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2403.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>JAMSHEER ALI(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2405":
+    text = ['<ul><a href="../students/2405.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2405.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>HAMZATH SAFVAN P(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2413":
+    text = ['<ul><a href="../students/2413.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2413.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMEEL(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2013":
+    text = ['<ul><a href="../students/2013.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2013.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDULLA B.A(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2387":
+    text = ['<ul><a href="../students/2387.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2387.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NAHEEM ASHHAL(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "H191":
+    text = ['<ul><a href="../students/H191.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H191.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED FAYIS(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2025":
+    text = ['<ul><a href="../students/2025.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2025.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUBARIS ARIF(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2391":
+    text = ['<ul><a href="../students/2391.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2391.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED ASAF ALI(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2399":
+    text = ['<ul><a href="../students/2399.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2399.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED AJMAL ZAHRY(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2404":
+    text = ['<ul><a href="../students/2404.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2404.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAFEEHU(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2421":
+    text = ['<ul><a href="../students/2421.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2421.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHABEEHE MUSHARRAFE(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2421":
+    text = ['<ul><a href="../students/2421.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2421.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHABEEHE MUSHARRAFE(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2421":
+    text = ['<ul><a href="../students/2421.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2421.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHABEEHE MUSHARRAFE(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2421":
+    text = ['<ul><a href="../students/2421.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2421.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHABEEHE MUSHARRAFE(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2435":
+    text = ['<ul><a href="../students/2435.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2435.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SAFVAN A(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2057":
+    text = ['<ul><a href="../students/2057.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2057.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHAFI PP(A+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2427":
+    text = ['<ul><a href="../students/2427.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2427.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>UNAIS P(AB+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "H182":
+    text = ['<ul><a href="../students/H182.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H182.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUZAMMIL(AB+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2396":
+    text = ['<ul><a href="../students/2396.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2396.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED IRSHAD KT(A-ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "H193":
+    text = ['<ul><a href="../students/H193.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H193.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SAEEDALI M(A-ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2393":
+    text = ['<ul><a href="../students/2393.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2393.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED ANAS(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2373":
+    text = ['<ul><a href="../students/2373.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2373.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>UNAIS VA(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2419":
+    text = ['<ul><a href="../students/2419.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2419.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED ANAS P(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2392":
+    text = ['<ul><a href="../students/2392.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2392.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMEEM P(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2412":
+    text = ['<ul><a href="../students/2412.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2412.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAFI T(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2388":
+    text = ['<ul><a href="../students/2388.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2388.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHAMVEEL PP(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2375":
+    text = ['<ul><a href="../students/2375.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2375.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHANNAD(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2417":
+    text = ['<ul><a href="../students/2417.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2417.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED RASHID K(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2381":
+    text = ['<ul><a href="../students/2381.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2381.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHABEEB(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2442":
+    text = ['<ul><a href="../students/2442.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2442.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED THANSEEM(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2408":
+    text = ['<ul><a href="../students/2408.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2408.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED AJMAL C(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2372":
+    text = ['<ul><a href="../students/2372.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2372.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MIDLAJ KP(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "3302":
+    text = ['<ul><a href="../students/3302.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/3302.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NOUFAL(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2438":
+    text = ['<ul><a href="../students/2438.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2438.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED ANAS V(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "H184":
+    text = ['<ul><a href="../students/H184.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H184.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED USMAN(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "1973":
+    text = ['<ul><a href="../students/1973.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/1973.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUJEEBU RAHMAN(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2400":
+    text = ['<ul><a href="../students/2400.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2400.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDUL BAKIR PT(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2397":
+    text = ['<ul><a href="../students/2397.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2397.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHABEER(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "H171":
+    text = ['<ul><a href="../students/H171.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H171.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NIYAS P(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2410":
+    text = ['<ul><a href="../students/2410.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2410.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MURSHID RAHMAN(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2389":
+    text = ['<ul><a href="../students/2389.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2389.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>NASEEM P(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;
+case "2431":
+    text = ['<ul><a href="../students/2431.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2431.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>HAMRAZ AHMED(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2395":
+    text = ['<ul><a href="../students/2395.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2395.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SUHAIL K(B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2044":
+    text = ['<ul><a href="../students/2044.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2044.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED (B+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;          
+case "2385":
+    text = ['<ul><a href="../students/2385.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2385.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED JASEEM(B-ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break; 
+case "2414":
+    text = ['<ul><a href="../students/2414.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2414.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED DILSHAD(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2440":
+    text = ['<ul><a href="../students/2440.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2440.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED JABIR P(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "H195":
+    text = ['<ul><a href="../students/H195.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H195.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABID HUSAIN(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2416":
+    text = ['<ul><a href="../students/2416.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2416.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUBASHIR KP(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2437":
+    text = ['<ul><a href="../students/2437.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2437.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NIYAS M(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "H168":
+    text = ['<ul><a href="../students/H168.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H168.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMMAS(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2422":
+    text = ['<ul><a href="../students/2422.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2422.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHALU SHIYAF(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "H187":
+    text = ['<ul><a href="../students/H187.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H187.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>HABEEB RAHMAN(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2018":
+    text = ['<ul><a href="../students/2018.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2018.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDU RAHMAN(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2378":
+    text = ['<ul><a href="../students/2378.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2378.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMD ALI RABEEH(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2430":
+    text = ['<ul><a href="../students/2430.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2430.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHYUDHEEN SHAKIR(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2029":
+    text = ['<ul><a href="../students/2029.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2029.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDU NAFIH VP(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "3301":
+    text = ['<ul><a href="../students/3301.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/3301.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>NAFEESUDHEEN(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2383":
+    text = ['<ul><a href="../students/2383.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2383.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUHSIN(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+case "2406":
+    text = ['<ul><a href="../students/2406.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2406.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUKTHAR PV(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+ case "2441":
+    text = ['<ul><a href="../students/2441.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2441.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED UVAIS(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+ case "H170":
+    text = ['<ul><a href="../students/H170.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H170.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SABEEH K(O+-e)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+ case "2390":
+    text = ['<ul><a href="../students/2390.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2390.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUNAVAR V(O+ve)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+    break;         
+    //name
+        case "MUHAMMED SHAMIL CH":text = ['<ul><a href="../students/2374.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2374.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMIL CH  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHMAMMED ANAS V":text = ['<ul><a href="../students/2393.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2393.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHMAMMED ANAS V  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "SABEEHE MUSHARRAFE":text = ['<ul><a href="../students/2421.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2421.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SABEEHE MUSHARRAFE  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMMED JASEEM PP ":text = ['<ul><a href="../students/2385.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2385.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED JASEEM PP   &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "NASEEM P":text = ['<ul><a href="../students/2389.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2389.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>NASEEM P  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "ABDULLA":text = ['<ul><a href="../students/2384.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2384.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDULLA  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "SHABEER T":text = ['<ul><a href="../students/2397.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2397.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHABEER T  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "SHAHIN ALI TC":text = ['<ul><a href="../students/2382.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2382.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SHAHIN ALI TC  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "SUHAIL K":text = ['<ul><a href="../students/2395.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2395.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SUHAIL K  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED JABIR P":text = ['<ul><a href="../students/2440.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2440.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED JABIR P  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED SHAFI T":text = ['<ul><a href="../students/2412.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2412.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAFI T  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED MUBASHIR KP":text = ['<ul><a href="../students/2416.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2416.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUBASHIR KP  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHYUDHEEN SHAKIR P":text = ['<ul><a href="../students/2430.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2430.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHYUDHEEN SHAKIR P  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED MUHSIN M":text = ['<ul><a href="../students/2383.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2383.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUHSIN M  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMMED ANAS P":text = ['<ul><a href="../students/2419.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2419.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED ANAS P  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMMED NIYAZ M":text = ['<ul><a href="../students/2437.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2437.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED NIYAZ M  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMAD MUNAVAR V":text = ['<ul><a href="../students/2390.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2390.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMAD MUNAVAR V  &nbsp;(O-VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED SHAMEEM":text = ['<ul><a href="../students/2392.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2392.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMEEM  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED MUKHTHAR PV":text = ['<ul><a href="../students/2406.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2406.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUKHTHAR PV  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED ANAS V":text = ['<ul><a href="../students/2438.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2438.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED ANAS V  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED RASHID K":text = ['<ul><a href="../students/2417.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2417.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED RASHID K  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMMED SHEBEEB P":text = ['<ul><a href="../students/2381.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2381.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED SHEBEEB P  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "SALU SHIYAF M":text = ['<ul><a href="../students/2422.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2422.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SALU SHIYAF M  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED FAYIZ N":text = ['<ul><a href="../students/H191.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H191.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED FAYIZ N  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED AJMAL ZAHRY":text = ['<ul><a href="../students/2399.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2399.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED AJMAL ZAHRY  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUJEEBU RAHMAN":text = ['<ul><a href="../students/1973.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/1973.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUJEEBU RAHMAN  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED SHAMMAS E":text = ['<ul><a href="../students/H168.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H168.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED SHAMMAS E  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "HABEEB RAHMAN TT":text = ['<ul><a href="../students/H187.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H187.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>HABEEB RAHMAN TT  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMMED SALIM":text = ['<ul><a href="../students/2418.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2418.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED SALIM  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED MUZAMMIL PT":text = ['<ul><a href="../students/H182.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H182.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MUZAMMIL PT  &nbsp;(AB+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "HAMRAZ AHAMED":text = ['<ul><a href="../students/2431.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2431.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>HAMRAZ AHAMED  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMED DILSHAD":text = ['<ul><a href="../students/2414.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2414.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMED DILSHAD  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "UNAIS VA":text = ['<ul><a href="../students/2373.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2373.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>UNAIS VA  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMAD SAFVAN A ":text = ['<ul><a href="../students/2435.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2435.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMAD SAFVAN A   &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMAD SHAFEEHU":text = ['<ul><a href="../students/2404.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2404.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMAD SHAFEEHU  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "SABEEH K":text = ['<ul><a href="../students/H170.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H170.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SABEEH K  &nbsp;(O-VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "ABOOBAKAR SIDDEEQUE K":text = ['<ul><a href="../students/2386.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2386.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABOOBAKAR SIDDEEQUE K  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "JAMSHEERALI NC ":text = ['<ul><a href="../students/2403.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2403.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>JAMSHEERALI NC   &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "ABID HUSSAIN KA":text = ['<ul><a href="../students/H195.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H195.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABID HUSSAIN KA  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "ASWIM SAEED A":text = ['<ul><a href="../students/2398.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2398.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ASWIM SAEED A  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED NOUFAL S":text = ['<ul><a href="../students/3302.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/3302.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NOUFAL S  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHANNAD KT":text = ['<ul><a href="../students/2375.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2375.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHANNAD KT  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMMED SHAMEEL M":text = ['<ul><a href="../students/2413.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2413.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED SHAMEEL M  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "UNAIS P":text = ['<ul><a href="../students/2427.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2427.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>UNAIS P  &nbsp;(AB+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED NAHEEM ASHHAL":text = ['<ul><a href="../students/2387.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2387.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NAHEEM ASHHAL  &nbsp;(`A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "ABDUL NAFIH VP":text = ['<ul><a href="../students/2029.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2029.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDUL NAFIH VP  &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED ASSAF ALI":text = ['<ul><a href="../students/2391.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2391.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED ASSAF ALI  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MURSHID RAHMAN":text = ['<ul><a href="../students/2410.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2410.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MURSHID RAHMAN  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED IRSHAD KT":text = ['<ul><a href="../students/2396.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2396.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED IRSHAD KT  &nbsp;(A-VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED THANSEEM V":text = ['<ul><a href="../students/2442.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2442.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED THANSEEM V  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "ABDUL BAKHIR PT":text = ['<ul><a href="../students/2400.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2400.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>ABDUL BAKHIR PT  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "NAFEESUDEEN S":text = ['<ul><a href="../students/3301.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/3301.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>NAFEESUDEEN S  &nbsp;(O+VE )</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMMED USMAN":text = ['<ul><a href="../students/H184.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H184.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED USMAN  &nbsp;(B-VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMMED AJMAL C":text = ['<ul><a href="../students/2408.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2408.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED AJMAL C  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED MIDHLAJ KP":text = ['<ul><a href="../students/2372.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2372.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED MIDHLAJ KP  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "SAMVIL":text = ['<ul><a href="../students/2388.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2388.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SAMVIL  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MOHAMMED ALI RABEAH NT":text = ['<ul><a href="../students/2378.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2378.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MOHAMMED ALI RABEAH NT  &nbsp;(O+VE )</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "HAMZATH SAFVAN P":text = ['<ul><a href="../students/2405.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2405.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>HAMZATH SAFVAN P  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUBARIS ARIF V":text = ['<ul><a href="../students/2025.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2025.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUBARIS ARIF V  &nbsp;(A+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "SAEED ALI":text = ['<ul><a href="../students/H193.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H193.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>SAEED ALI  &nbsp;(A-VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED UVAIS ":text = ['<ul><a href="../students/2441.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/2441.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED UVAIS   &nbsp;(O+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    case "MUHAMMED NIYAS P":text = ['<ul><a href="../students/H171.html"><span style="width:42px; height:60px; border-radius:50%;" display:inline-block;"><img src="../pictures/H171.jpg" width="60px" height="60px"style="float:left; margin-left:33%; border-radius:50%"></span></a><li>MUHAMMED NIYAS P  &nbsp;(B+VE)</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];break;
+    
+    default:
+    text = ['<ul><span style="width:42px; height:60px;"></span></a><li>Pls search by your Admission number or blood group.....</li><span class="closebtn" onclick=this.parentElement.style.display="none">&times;</span> <br></ul>'];
+       
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV1");
+var btns = header.getElementsByClassName("btn1");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+</body>
+</html>
+
